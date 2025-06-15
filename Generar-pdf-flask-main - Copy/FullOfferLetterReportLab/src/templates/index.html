@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offer Letter Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Offer Letter Generator</h1>
+        <form method="POST" action="/generate-offer">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="position">Job Title / Position:</label>
+            <input type="text" id="position" name="position" required />
+
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required />
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required />
+
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" required />
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required />
+
+            <label for="hr_name">HR Manager Name:</label>
+            <input type="text" id="hr_name" name="hr_name" required />
+
+            <label for="date_of_letter">Date of Letter (optional):</label>
+            <input type="date" id="date_of_letter" name="date_of_letter" value="{{ current_date }}" />
+
+            <button type="submit">Generate Offer Letter</button>
+        </form>
+    </div>
+</body>
+</html>
